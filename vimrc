@@ -91,3 +91,6 @@ set expandtab
 " 自动缩进
 set autoindent
 
+" 显示行号
+set number
+

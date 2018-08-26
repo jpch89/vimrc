@@ -94,3 +94,8 @@ set autoindent
 " 显示行号
 set number
 
+" 状态行可见
+set laststatus=2
+" 状态行显示路径
+set statusline+=%F
+

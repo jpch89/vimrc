@@ -84,12 +84,14 @@ noremap <A-j> gT
 " alt-k 向右移动标签页
 noremap <A-k> gt
 
-" tab设置为4个空格
+" tab设置为 4 个空格
 set tabstop=4
 set expandtab
 
 " 自动缩进
 set autoindent
+" 自动缩进 4 个空格
+set shiftwidth=4
 
 " 显示行号
 set number

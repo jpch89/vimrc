@@ -101,3 +101,8 @@ set laststatus=2
 " 状态行显示路径
 set statusline+=%F
 
+" 设置80列颜色为灰色
+highlight ColorColumn ctermbg=7
+" 设置80列颜色条
+set colorcolumn=80
+

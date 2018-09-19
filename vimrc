@@ -62,6 +62,10 @@ endif
 " 以下为个人配置
 " 作者：jpch89
 
+" 备忘
+" :version 命令查看 vimrc 文件保存位置
+" 一般放在家目录下面，命名为 .vimrc 即可
+
 " ctrl-s 保存
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
@@ -105,4 +109,3 @@ set statusline+=%F
 highlight ColorColumn ctermbg=7
 " 设置80列颜色条
 set colorcolumn=80
-

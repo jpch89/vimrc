@@ -109,3 +109,6 @@ set statusline+=%F
 highlight ColorColumn ctermbg=7
 " 设置80列颜色条
 set colorcolumn=80
+
+" 主题颜色
+colorscheme desert

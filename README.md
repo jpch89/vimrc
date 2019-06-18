@@ -21,8 +21,11 @@
 
   `git clone git@github.com:jpch89/vimrc.git`
 
-- 拷贝下载的 `vimrc` 文件到 `/home/jpch89/` 中
-  `cp /mnt/code/vimrc ~/`
+- 拷贝下载的 `.vimrc` 文件到 `/home/jpch89/` 中
+  `cp /mnt/code/vimrc/Unix/.vimrc ~/`
 
-- 重命名为 `.vimrc`
-  `mv ./vimrc ./.vimrc`
+
+
+> `Windows` 版的配置文件可以使用 `:set fileformat=unix` 来转换成 `Unix` 版配置文件。
+>
+> 简写形式是 `:set ff=unix` 回车。

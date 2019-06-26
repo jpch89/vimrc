@@ -112,3 +112,13 @@ set colorcolumn=80
 
 " 主题颜色
 colorscheme desert
+
+" 当前行添加下划线
+set cursorline
+
+" 右下角显示命令
+set showcmd
+
+" tab 弹出命令提示菜单
+set wildmenu
+

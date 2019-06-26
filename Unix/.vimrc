@@ -99,6 +99,8 @@ set shiftwidth=4
 
 " 显示行号
 set number
+" 显示相对行号
+set relativenumber
 
 " 状态行可见
 set laststatus=2

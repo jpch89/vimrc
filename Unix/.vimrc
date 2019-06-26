@@ -67,14 +67,17 @@ endif
 " 一般放在家目录下面，命名为 .vimrc 即可
 
 " ctrl-s 保存
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
+" 还要改 .bashrc，否则会卡主，按 ctrl-q 恢复
+" nmap <c-s> :w<CR>
+" imap <c-s> <Esc>:w<CR>a
 
 " 增量搜索
 set incsearch
 
 " 智能大小写
 set smartcase
+" 忽略大小写
+set ignorecase
 
 " 按照缩进折叠
 set foldmethod=indent
@@ -123,4 +126,12 @@ set showcmd
 
 " tab 弹出命令提示菜单
 set wildmenu
+
+" 高亮搜索
+set hlsearch
+" 增量搜索，动态高亮
+set incsearch
+
+" 取消高亮：反斜杠加回车
+noremap <LEADER><CR> :nohlsearch<CR>
 

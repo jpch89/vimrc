@@ -148,6 +148,9 @@ set listchars=tab:▸\ ,trail:▫
 " 继续上次编辑
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" 绑定系统剪切板到无名寄存器
+set clipboard=unnamed
+
 " 开启分屏
 map <LEADER>sk :set nosplitbelow<CR>:split<CR>
 map <LEADER>sj :set splitbelow<CR>:split<CR>
@@ -165,4 +168,3 @@ map <c-up> :resize +1<CR>
 map <c-down> :resize -1<CR>
 map <c-left> :vertical resize -1<CR>
 map <c-right> :vertical resize +1<CR>
-

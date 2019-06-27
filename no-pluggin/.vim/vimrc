@@ -80,6 +80,9 @@ set encoding=utf-8
 " leader 键设置为空格键
 let mapleader=" "
 
+" G 键居中
+nmap G Gzz
+
 " 智能大小写
 set smartcase
 " 忽略大小写
@@ -148,7 +151,7 @@ set listchars=tab:▸\ ,trail:▫
 " 继续上次编辑
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" 绑定系统剪切板到无名寄存器
+" 设置系统剪切板为默认剪切板
 set clipboard^=unnamed,unnamedplus
 
 " 开启分屏

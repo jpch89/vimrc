@@ -1,5 +1,9 @@
 # vimrc
 
+**更新说明**
+- 去掉了 `Windows` 版本
+- 目前经过测试的版本是：`Ubuntu 18.04.2 LTS'
+
 **使用方法**
 
 > 下面以 `wsl ubuntu` 为例。
@@ -29,3 +33,4 @@
 > `Windows` 版的配置文件可以使用 `:set fileformat=unix` 来转换成 `Unix` 版配置文件。
 >
 > 简写形式是 `:set ff=unix` 回车。
+

@@ -67,12 +67,19 @@ endif
 " 一般放在家目录下面，命名为 .vimrc 即可
 
 " ctrl-s 保存
-" 还要改 .bashrc，否则会卡主，按 ctrl-q 恢复
+" 还要改 .bashrc，否则会卡住，按 ctrl-q 恢复
 " nmap <c-s> :w<CR>
 " imap <c-s> <Esc>:w<CR>a
 
-" 增量搜索
-set incsearch
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+set encoding=utf-8
+
+" leader 键设置为空格键
+let mapleader=" "
 
 " 智能大小写
 set smartcase
@@ -83,22 +90,26 @@ set ignorecase
 set foldmethod=indent
 
 " 普通模式中用空格打开 / 收起折叠
-nnoremap <space> za
+" nnoremap <space> za
 
 " 移动标签页快捷键
 " alt-j 向左移动标签页
-noremap <A-j> gT
+" noremap <A-j> gT
 " alt-k 向右移动标签页
-noremap <A-k> gt
+" noremap <A-k> gt
 
 " tab设置为 4 个空格
 set tabstop=4
 set expandtab
-
 " 自动缩进
 set autoindent
 " 自动缩进 4 个空格
 set shiftwidth=4
+" 一次性删除整个 tab
+set softtabstop=4
+
+" 自动切换目录
+set autochdir
 
 " 显示行号
 set number
@@ -128,9 +139,33 @@ set wildmenu
 set hlsearch
 " 增量搜索，动态高亮
 set incsearch
-
-" 取消高亮：反斜杠加回车
+" 取消高亮：空格加回车
 noremap <LEADER><CR> :nohlsearch<CR>
+
+" 显示非可见字符
+set list
+set listchars=tab:▸\ ,trail:▫
+
+" 继续上次编辑
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" 开启分屏
+map <LEADER>sk :set nosplitbelow<CR>:split<CR>
+map <LEADER>sj :set splitbelow<CR>:split<CR>
+map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
+map <LEADER>sl :set splitright<CR>:vsplit<CR>
+
+" 分屏间移动
+map <LEADER>h <C-w>h
+map <LEADER>j <C-w>j
+map <LEADER>k <C-w>k
+map <LEADER>l <C-w>l
+
+" 分屏尺寸
+map <c-up> :resize +1<CR>
+map <c-down> :resize -1<CR>
+map <c-left> :vertical resize -1<CR>
+map <c-right> :vertical resize +1<CR>
 
 " 自动拉取 vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))

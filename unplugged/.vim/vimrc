@@ -71,7 +71,6 @@ endif
 " nmap <c-s> :w<CR>
 " imap <c-s> <Esc>:w<CR>a
 
-set nocompatible
 filetype on
 filetype indent on
 filetype plugin on

@@ -73,8 +73,8 @@ endif
 
 set encoding=utf-8
 
-" leader 键设置为空格键
-let mapleader=" "
+" leader 键设置为逗号键
+let mapleader=","
 
 " G 键居中
 nnoremap G Gzz
@@ -88,7 +88,7 @@ set ignorecase
 set foldmethod=indent
 
 " 普通模式中用空格打开 / 收起折叠
-" nnoremap <space> za
+nnoremap <space> za
 
 " 移动标签页快捷键
 " alt-j 向左移动标签页
@@ -137,7 +137,7 @@ set wildmenu
 set hlsearch
 " 增量搜索，动态高亮
 set incsearch
-" 取消高亮：空格加回车
+" 取消高亮：<LEADER>加回车
 noremap <LEADER><CR> :nohlsearch<CR>
 
 " 显示非可见字符
@@ -149,6 +149,13 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " 设置系统剪切板为默认剪切板
 set clipboard^=unnamed,unnamedplus
+
+" 使用 leader+w 直接保存
+inoremap <LEADER>w <Esc>:w<CR>a
+noremap <LEADER>w :w<CR>
+
+" 超级写入
+cnoremap w!! w !sudo tee % >/dev/null
 
 " 开启分屏
 noremap <LEADER>sk :set nosplitbelow<CR>:split<CR>

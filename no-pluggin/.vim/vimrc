@@ -154,9 +154,6 @@ set clipboard^=unnamed,unnamedplus
 inoremap <LEADER>w <Esc>:w<CR>a
 noremap <LEADER>w :w<CR>
 
-" 超级写入
-cnoremap w!! w !sudo tee % >/dev/null
-
 " 开启分屏
 noremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
 noremap <LEADER>sj :set splitbelow<CR>:split<CR>

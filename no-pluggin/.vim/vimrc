@@ -77,7 +77,7 @@ set encoding=utf-8
 let mapleader=" "
 
 " G 键居中
-nmap G Gzz
+nnoremap G Gzz
 
 " 智能大小写
 set smartcase
@@ -151,19 +151,22 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set clipboard^=unnamed,unnamedplus
 
 " 开启分屏
-map <LEADER>sk :set nosplitbelow<CR>:split<CR>
-map <LEADER>sj :set splitbelow<CR>:split<CR>
-map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
-map <LEADER>sl :set splitright<CR>:vsplit<CR>
+noremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
+noremap <LEADER>sj :set splitbelow<CR>:split<CR>
+noremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
+noremap <LEADER>sl :set splitright<CR>:vsplit<CR>
 
 " 分屏间移动
-map <LEADER>h <C-w>h
-map <LEADER>j <C-w>j
-map <LEADER>k <C-w>k
-map <LEADER>l <C-w>l
+noremap <LEADER>h <C-w>h
+noremap <LEADER>j <C-w>j
+noremap <LEADER>k <C-w>k
+noremap <LEADER>l <C-w>l
 
 " 分屏尺寸
-map <c-up> :resize +1<CR>
-map <c-down> :resize -1<CR>
-map <c-left> :vertical resize -1<CR>
-map <c-right> :vertical resize +1<CR>
+noremap <c-up> :resize +1<CR>
+noremap <c-down> :resize -1<CR>
+noremap <c-left> :vertical resize -1<CR>
+noremap <c-right> :vertical resize +1<CR>
+
+" 主题颜色
+colorscheme desert

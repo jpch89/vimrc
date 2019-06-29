@@ -73,8 +73,9 @@ endif
 
 set encoding=utf-8
 
-" leader 键设置为逗号键
-let mapleader=","
+" leader 键设置为空格键
+let mapleader=" "
+let g:mapleader=" "
 
 " G 键居中
 nnoremap G Gzz
@@ -88,7 +89,7 @@ set ignorecase
 set foldmethod=indent
 
 " 普通模式中用空格打开 / 收起折叠
-nnoremap <space> za
+" nnoremap <space> za
 
 " 移动标签页快捷键
 " alt-j 向左移动标签页
@@ -138,7 +139,7 @@ set hlsearch
 " 增量搜索，动态高亮
 set incsearch
 " 取消高亮：<LEADER>加回车
-noremap <LEADER><CR> :nohlsearch<CR>
+nnoremap <LEADER><CR> :nohlsearch<CR>
 
 " 显示非可见字符
 set list
@@ -151,26 +152,30 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set clipboard^=unnamed,unnamedplus
 
 " 使用 leader+w 直接保存
-inoremap <LEADER>w <Esc>:w<CR>a
-noremap <LEADER>w :w<CR>
+nnoremap <LEADER>w :w<CR>
+
+" 12<Enter> 跳转到 12 行，代替 12G，并且设置居中
+nnoremap <CR> Gzz
+" 退格键返回文件开头
+nnoremap <BS> gg
 
 " 开启分屏
-noremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
-noremap <LEADER>sj :set splitbelow<CR>:split<CR>
-noremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
-noremap <LEADER>sl :set splitright<CR>:vsplit<CR>
+nnoremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
+nnoremap <LEADER>sj :set splitbelow<CR>:split<CR>
+nnoremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
+nnoremap <LEADER>sl :set splitright<CR>:vsplit<CR>
 
 " 分屏间移动
-noremap <LEADER>h <C-w>h
-noremap <LEADER>j <C-w>j
-noremap <LEADER>k <C-w>k
-noremap <LEADER>l <C-w>l
+nnoremap <LEADER>h <C-w>h
+nnoremap <LEADER>j <C-w>j
+nnoremap <LEADER>k <C-w>k
+nnoremap <LEADER>l <C-w>l
 
 " 分屏尺寸
-noremap <c-up> :resize +1<CR>
-noremap <c-down> :resize -1<CR>
-noremap <c-left> :vertical resize -1<CR>
-noremap <c-right> :vertical resize +1<CR>
+nnoremap <c-up> :resize +1<CR>
+nnoremap <c-down> :resize -1<CR>
+nnoremap <c-left> :vertical resize -1<CR>
+nnoremap <c-right> :vertical resize +1<CR>
 
 " 主题颜色
 colorscheme desert

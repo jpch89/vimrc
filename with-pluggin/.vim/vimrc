@@ -151,8 +151,16 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " 设置系统剪切板为默认剪切板
 set clipboard^=unnamed,unnamedplus
 
+" 编辑模式下 jj 退出
+inoremap jj <Esc>
+" 编辑模式下 jc 进入命令模式
+inoremap jc <Esc>:
+
 " 使用 leader+w 直接保存
 nnoremap <LEADER>w :w<CR>
+
+" 使用 leader+x 保存退出
+nnoremap <LEADER>x :x<CR>
 
 " 12<Enter> 跳转到 12 行，代替 12G，并且设置居中
 nnoremap <CR> Gzz
@@ -164,6 +172,9 @@ nnoremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
 nnoremap <LEADER>sj :set splitbelow<CR>:split<CR>
 nnoremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
 nnoremap <LEADER>sl :set splitright<CR>:vsplit<CR>
+
+" 关闭分屏
+nnoremap <LEADER>c <C-w>c
 
 " 分屏间移动
 nnoremap <LEADER>h <C-w>h
@@ -193,11 +204,41 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rakr/vim-one'
 " Vim 启动界面
 Plug 'mhinz/vim-startify'
+" 缩进线
+Plug 'yggdroot/indentline'
+" 目录树
+Plug 'scrooloose/nerdtree'
+" 查找文件 leader f
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+" 文件内快速定位
+Plug 'easymotion/vim-easymotion'
+" surrouding: ds，cs，ys+选择(ysiw")
+Plug 'tpope/vim-surround'
+" python-mode
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 call plug#end()
 
 " 主题颜色
-" colorscheme desert
 set background=light
 colorscheme one
 let g:airline_theme='one'
+
+" nerdtree 相关配置
+" 打开关闭 nerdtree：n for nerdtree
+nnoremap <c-n> :NERDTreeToggle<CR>
+" 跳转到 nerdtree 位置：v for view
+nnoremap <leader>v :NERDTreeFind<CR>
+
+" easymotion 相关配置：m for move
+nmap <leader>m <Plug>(easymotion-s2)
+
+" python mode
+let g:pymode_python = 'python3'
+let g:pymode_trim_whitespaces = 1
+let g:pymode_doc = 1
+let g:pymode_doc_bind = 'K'
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+let g:pymode_options_max_line_length = 120

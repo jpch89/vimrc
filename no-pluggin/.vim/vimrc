@@ -151,8 +151,16 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " 设置系统剪切板为默认剪切板
 set clipboard^=unnamed,unnamedplus
 
+" 编辑模式下 jj 退出
+inoremap jj <Esc>
+" 编辑模式下 jc 进入命令模式
+inoremap jc <Esc>:
+
 " 使用 leader+w 直接保存
 nnoremap <LEADER>w :w<CR>
+
+" 使用 leader+x 保存退出
+nnoremap <LEADER>x :x<CR>
 
 " 12<Enter> 跳转到 12 行，代替 12G，并且设置居中
 nnoremap <CR> Gzz
@@ -164,6 +172,9 @@ nnoremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
 nnoremap <LEADER>sj :set splitbelow<CR>:split<CR>
 nnoremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
 nnoremap <LEADER>sl :set splitright<CR>:vsplit<CR>
+
+" 关闭分屏
+nnoremap <LEADER>c <C-w>c
 
 " 分屏间移动
 nnoremap <LEADER>h <C-w>h

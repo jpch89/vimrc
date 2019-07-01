@@ -113,7 +113,7 @@ set autochdir
 " 显示行号
 set number
 " 显示相对行号
-set relativenumber
+" set relativenumber
 
 " 状态行可见
 set laststatus=2
@@ -158,7 +158,6 @@ inoremap jc <Esc>:
 
 " 使用 leader+w 直接保存
 nnoremap <LEADER>w :w<CR>
-
 " 使用 leader+x 保存退出
 nnoremap <LEADER>x :x<CR>
 
@@ -172,7 +171,6 @@ nnoremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
 nnoremap <LEADER>sj :set splitbelow<CR>:split<CR>
 nnoremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
 nnoremap <LEADER>sl :set splitright<CR>:vsplit<CR>
-
 " 关闭分屏
 nnoremap <LEADER>c <C-w>c
 

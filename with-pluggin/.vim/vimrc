@@ -214,17 +214,19 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 " python-mode
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" gutentags
 Plug 'ludovicchabant/vim-gutentags'
+" tagbar
 Plug 'majutsushi/tagbar'
 " vim-interestingwords: k for keyword
 Plug 'lfv89/vim-interestingwords'
-
-" coc.vim
-" Use release branch
+" coc.vim: Use release branch
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Or build from source code
-" Install yarn from https://yarnpkg.com
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" 注释
+" Plug 'tpope/vim-commentary'
+" git
+" Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " 主题颜色

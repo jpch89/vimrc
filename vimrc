@@ -200,6 +200,7 @@ Plug 'kana/vim-textobj-indent'
 call plug#end()
 
 " 主题颜色
+set background=light
 colorscheme one
 
 " easymotion 相关配置：m for move

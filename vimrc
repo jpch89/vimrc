@@ -177,3 +177,27 @@ nnoremap <c-down> :resize -1<cr>
 nnoremap <c-left> :vertical resize -1<cr>
 nnoremap <c-right> :vertical resize +1<cr>
 
+" 自动安装 vim-plug，依赖于 curl
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" 安装插件
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'rakr/vim-one'
+Plug 'mhinz/vim-startify'
+Plug 'yggdroot/indentline'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'lfv89/vim-interestingwords'
+Plug 'tpope/vim-commentary'
+call plug#end()
+
+" 主题颜色
+colorscheme one
+
+" easymotion 相关配置：m for move
+nmap <leader>m <Plug>(easymotion-s2)

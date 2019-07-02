@@ -79,8 +79,6 @@ endif
 
 " 状态栏显示部分命令
 set showcmd
-" 显示成对括号
-set showmatch
 
 " 忽略大小写
 set ignorecase
@@ -95,7 +93,7 @@ set hlsearch
 nnoremap <leader><cr> :nohlsearch<cr>
 
 " 鼠标操作
-set mouse=a 
+set mouse=a
 " 文件编码
 set encoding=utf-8
 " G 键居中
@@ -127,9 +125,9 @@ set laststatus=2
 " 状态行显示路径
 set statusline+=%F
 " 设置 80 列颜色为灰色
-highlight ColorColumn ctermbg=7
+" highlight ColorColumn ctermbg=7
 " 设置 80 列颜色条
-set colorcolumn=80
+" set colorcolumn=80
 " 当前行添加下划线
 set cursorline
 " tab 弹出命令提示菜单
@@ -197,6 +195,7 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
 " 主题颜色
@@ -205,3 +204,21 @@ colorscheme one
 
 " easymotion 相关配置：m for move
 nmap <leader>m <Plug>(easymotion-s2)
+
+" python-mode 配置
+" 使用 python 3 语法检查
+let g:pymode_python = 'python3'
+" 保存时删除无用空白字符
+let g:pymode_trim_whitespaces = 1
+" 最大列数
+let g:pymode_options_max_line_length = 79
+" 高亮最大列数 + 1 列
+let g:pymode_options_colorcolumn = 1
+" 缩进
+let g:pymode_indent = 1
+" 开启动作
+let g:pymode_motion = 1
+" 开启文档
+let g:pymode_doc = 1
+" 查找文档快捷键
+let g:pymode_doc_bind = 'K'

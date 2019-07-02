@@ -194,6 +194,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'lfv89/vim-interestingwords'
 Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
 call plug#end()
 
 " 主题颜色

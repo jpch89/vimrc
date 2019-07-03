@@ -175,6 +175,11 @@ nnoremap <c-down> :resize -1<cr>
 nnoremap <c-left> :vertical resize -1<cr>
 nnoremap <c-right> :vertical resize +1<cr>
 
+" 开启标签页
+nnoremap <leader>tn :tabnew<cr>
+" 关闭标签页
+nnoremap <leader>tc :tabclose<cr>
+
 " 自动安装 vim-plug，依赖于 curl
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -212,8 +217,6 @@ nmap <leader>m <Plug>(easymotion-s2)
 " python-mode 配置
 " Python 3
 let g:pymode_python = 'python3'
-" 格式化代码
-" map <leader>p :PymodeLintAuto<cr>
 " 不显示错误信息窗口
 let g:pymode_lint_cwindow = 0
 " 保存和保存退出时自动格式化代码
@@ -226,5 +229,5 @@ endif
 map <leader>e :NERDTreeToggle<CR>
 
 " leaderf
-" 下面的项最匹配
+" 最优选放在最下面
 let g:Lf_ReverseOrder = 1

@@ -189,8 +189,11 @@ Plug 'rakr/vim-one'
 Plug 'mhinz/vim-startify'
 Plug 'yggdroot/indentline'
 Plug 'easymotion/vim-easymotion'
+Plug 'jpch89/vim-interestingwords'
 Plug 'tpope/vim-surround'
-Plug 'lfv89/vim-interestingwords'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -202,7 +205,7 @@ call plug#end()
 set background=light
 colorscheme one
 
-" easymotion 相关配置：m for move
+" easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
 
 " python-mode 配置
@@ -222,3 +225,6 @@ let g:pymode_motion = 1
 let g:pymode_doc = 1
 " 查找文档快捷键
 let g:pymode_doc_bind = 'K'
+
+" nerdtree
+map <leader>e :NERDTreeToggle<CR>

@@ -199,6 +199,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'Yggdroot/LeaderF'
 call plug#end()
 
 " 主题颜色
@@ -228,3 +229,7 @@ let g:pymode_doc_bind = 'K'
 
 " nerdtree
 map <leader>e :NERDTreeToggle<CR>
+
+" leaderf
+" 下面的项最匹配
+let g:Lf_ReverseOrder = 1

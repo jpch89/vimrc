@@ -210,22 +210,17 @@ colorscheme one
 nmap <leader>m <Plug>(easymotion-s2)
 
 " python-mode 配置
-" 使用 python 3 语法检查
+" Python 3
 let g:pymode_python = 'python3'
-" 保存时删除无用空白字符
-let g:pymode_trim_whitespaces = 1
-" 最大列数
-let g:pymode_options_max_line_length = 79
-" 高亮最大列数 + 1 列
-let g:pymode_options_colorcolumn = 1
-" 缩进
-let g:pymode_indent = 1
-" 开启动作
-let g:pymode_motion = 1
-" 开启文档
-let g:pymode_doc = 1
-" 查找文档快捷键
-let g:pymode_doc_bind = 'K'
+" 格式化代码
+" map <leader>p :PymodeLintAuto<cr>
+" 不显示错误信息窗口
+let g:pymode_lint_cwindow = 0
+" 保存和保存退出时自动格式化代码
+if has("autocmd")
+  autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>
+  autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
+endif
 
 " nerdtree
 map <leader>e :NERDTreeToggle<CR>

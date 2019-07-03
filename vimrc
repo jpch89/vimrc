@@ -162,6 +162,10 @@ nnoremap <leader>sk :set nosplitbelow<cr>:split<cr>
 nnoremap <leader>sj :set splitbelow<cr>:split<cr>
 nnoremap <leader>sh :set nosplitright<cr>:vsplit<cr>
 nnoremap <leader>sl :set splitright<cr>:vsplit<cr>
+" 竖分屏变横分屏
+nnoremap <leader>sp <c-w>t<c-w>K
+" 横分屏变竖分屏
+nnoremap <leader>sv <c-w>t<c-w>H
 " 关闭分屏
 nnoremap <leader>c <c-w>c
 " 分屏间移动

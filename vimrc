@@ -225,7 +225,7 @@ let g:pymode_python = 'python3'
 let g:pymode_lint_cwindow = 0
 " 保存和保存退出时自动格式化代码
 if has("autocmd")
-  autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>
+  autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
   autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
 endif
 

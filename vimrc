@@ -207,7 +207,7 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 call plug#end()
 
@@ -228,9 +228,11 @@ if has("autocmd")
   autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
   autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
 endif
+" 设置预览窗口大小
+let g:pymode_preview_height = 8
 
 " nerdtree
-map <leader>e :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " leaderf
 " 最优选放在最下面

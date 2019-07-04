@@ -230,20 +230,6 @@ if has("autocmd")
 endif
 " 设置预览窗口大小
 let g:pymode_preview_height = 8
-" 重置快捷键
-let g:pymode_run_bind = '<leader>e'
-let g:pymode_rope_show_doc_bind = '<leader>rd'
-let g:pymode_rope_goto_definition_bind = '<leader>rg'
-let g:pymode_rope_rename_bind = '<leader>rr'
-let g:pymode_rope_rename_module_bind = '<leader>rm'
-let g:pymode_rope_organize_imports_bind = '<leader>ri'
-let g:pymode_rope_autoimport_bind = '<leader>ra'
-let g:pymode_rope_module_to_package_bind = '<leader>rp'
-let g:pymode_rope_extract_method_bind = '<leader>re'
-let g:pymode_rope_extract_variable_bind = '<leader>rv'
-let g:pymode_rope_use_function_bind = '<leader>rf'
-let g:pymode_rope_move_bind = '<leader>rb'
-let g:pymode_rope_change_signature_bind = '<leader>rs'
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>

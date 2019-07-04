@@ -157,6 +157,9 @@ nnoremap <cr> Gzz
 " 退格键返回文件开头
 nnoremap <bs> gg
 
+" 保证上下空行
+set scrolloff=3
+
 " 开启分屏
 nnoremap <leader>sk :set nosplitbelow<cr>:split<cr>
 nnoremap <leader>sj :set splitbelow<cr>:split<cr>

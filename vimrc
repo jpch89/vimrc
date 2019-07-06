@@ -67,6 +67,9 @@ if has("syntax")
   syntax on
 endif
 
+" 开启 256 色
+set t_Co=256
+
 " 打开文件跳转到上次编辑位置
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -197,7 +200,6 @@ endif
 " 安装插件
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
-Plug 'rakr/vim-one'
 Plug 'mhinz/vim-startify'
 Plug 'yggdroot/indentline'
 Plug 'easymotion/vim-easymotion'
@@ -212,14 +214,16 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
 
 " 主题颜色
-set background=light
-colorscheme one
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
 
 " indentline 相关配置
 let g:indentLine_conceallevel = 0
+
 " easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
 

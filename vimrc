@@ -218,6 +218,8 @@ call plug#end()
 set background=light
 colorscheme one
 
+" indentline 相关配置
+let g:indentLine_conceallevel = 0
 " easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
 

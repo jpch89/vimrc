@@ -258,6 +258,14 @@ let g:pymode_run_bind = '<leader>e'
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>
 
+" startify
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
+
 " leaderf
 " 最优选放在最下面
 let g:Lf_ReverseOrder = 1

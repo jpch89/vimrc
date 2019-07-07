@@ -160,6 +160,10 @@ nnoremap <cr> Gzz
 " 退格键返回文件开头
 nnoremap <bs> gg
 
+" 补全不弹出预览窗口
+" set completeopt-=preview
+set completeopt=longest,menuone
+
 " 保证上下空行
 set scrolloff=3
 

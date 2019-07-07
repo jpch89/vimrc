@@ -102,7 +102,7 @@ set encoding=utf-8
 " G 键居中
 nnoremap G Gzz
 " 按照缩进折叠
-set foldmethod=indent
+" set foldmethod=indent
 
 " tab 宽度为 4
 set tabstop=4
@@ -161,7 +161,6 @@ nnoremap <cr> Gzz
 nnoremap <bs> gg
 
 " 补全不弹出预览窗口
-" set completeopt-=preview
 set completeopt=longest,menuone
 
 " 保证上下空行
@@ -235,7 +234,8 @@ inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 " indentline 相关配置
-let g:indentLine_conceallevel = 0
+let g:indentLine_setConceal = 2
+let g:indentLine_concealcursor = "nv"
 
 " easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
@@ -246,17 +246,20 @@ let g:pymode_python = 'python3'
 " 不显示错误信息窗口
 let g:pymode_lint_cwindow = 0
 " 保存和保存退出时自动格式化代码
-if has("autocmd")
-  autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
-  autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
-endif
+" if has("autocmd")
+"   autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
+"   autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
+" endif
 " 设置预览窗口大小
 let g:pymode_preview_height = 8
 " 运行代码快捷键
 let g:pymode_run_bind = '<leader>e'
+" 每次保存自动检查代码
+let g:pymode_lint_on_write = 1
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['^__pycache__$']
 
 " startify
 autocmd VimEnter *

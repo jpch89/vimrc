@@ -257,7 +257,7 @@ let g:pymode_preview_height = 8
 " 运行代码快捷键
 let g:pymode_run_bind = '<leader>e'
 " 自动检测文件类型
-au BufNewFile,BufRead *.py set filetype=python
+" au BufNewFile,BufRead *.py set filetype=python
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>

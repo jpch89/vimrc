@@ -209,7 +209,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jpch89/vim-interestingwords'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" 与 python-mode 插件冲突
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
@@ -246,16 +247,17 @@ let g:pymode_python = 'python3'
 " 不显示错误信息窗口
 let g:pymode_lint_cwindow = 0
 " 保存和保存退出时自动格式化代码
-" if has("autocmd")
-"   autocmd FileType python nnoremap <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
-"   autocmd FileType python nnoremap <leader>x :PymodeLintAuto<cr>:x<cr>
-" endif
+if has("autocmd")
+  " local mapping just for the active buffer
+  autocmd filetype python nnoremap <buffer> <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
+  autocmd filetype python nnoremap <buffer> <leader>x :PymodeLintAuto<cr>:x<cr>
+endif
 " 设置预览窗口大小
 let g:pymode_preview_height = 8
 " 运行代码快捷键
 let g:pymode_run_bind = '<leader>e'
-" 每次保存自动检查代码
-let g:pymode_lint_on_write = 1
+" 自动检测文件类型
+au BufNewFile,BufRead *.py set filetype=python
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>

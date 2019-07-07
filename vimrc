@@ -219,11 +219,20 @@ Plug 'kana/vim-textobj-indent'
 Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'neitanod/vim-clevertab'
 call plug#end()
 
 " 主题颜色
 colorscheme onehalflight
 let g:airline_theme='onehalfdark'
+
+" clevertab 配置
+inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
+                      \<c-r>=CleverTab#Complete('tab')<cr>
+                      \<c-r>=CleverTab#Complete('omni')<cr>
+                      \<c-r>=CleverTab#Complete('keyword')<cr>
+                      \<c-r>=CleverTab#Complete('stop')<cr>
+inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 " indentline 相关配置
 let g:indentLine_conceallevel = 0

@@ -208,6 +208,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 Plug 'yggdroot/indentline'
 Plug 'easymotion/vim-easymotion'
+" <leader>i作为快捷键
 Plug 'jpch89/vim-interestingwords'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -229,7 +230,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" 仅使用 coc-pairs, coc-json, coc-html, coc-css
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " 主题颜色
@@ -256,6 +258,8 @@ nmap <leader>m <Plug>(easymotion-s2)
 let g:pymode_python = 'python3'
 " 不显示错误信息窗口
 let g:pymode_lint_cwindow = 0
+" 忽略e501 错误，超过 79 个字符的错误
+let g:pymode_lint_ignore = ["E501"]
 " 保存和保存退出时自动格式化代码
 if has("autocmd")
   " 给当前缓存绑定快捷键 local mapping just for the active buffer
@@ -316,4 +320,9 @@ let g:airline_powerline_fonts = 1
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 " coc.vim
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" 使用 tab 切换补全选项
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" coc-autopairs
+" 禁止在 vim 文件中的双引号配对行为
+autocmd FileType vim let b:coc_pairs_disabled = ['"']

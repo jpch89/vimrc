@@ -218,13 +218,13 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
-" Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " clevertab（coc.vim可以直接通过配置项达到此效果）
 Plug 'neitanod/vim-clevertab'
 " 在 Vim 里运行终端的插件，待观察
-" Plug 'kassio/neoterm'
+Plug 'kassio/neoterm'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'

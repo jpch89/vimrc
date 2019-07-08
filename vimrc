@@ -133,6 +133,8 @@ set statusline+=%F
 " set colorcolumn=80
 " 当前行添加下划线
 set cursorline
+" 当前列添加高亮
+" set cursorcolumn
 " tab 弹出命令提示菜单
 set wildmenu
 
@@ -220,6 +222,10 @@ Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'neitanod/vim-clevertab'
+" Plug 'kassio/neoterm'
+Plug 'tpope/vim-fugitive'
+" Plug 'liuchengxu/vista.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " 主题颜色
@@ -229,8 +235,8 @@ let g:airline_theme='onehalfdark'
 " clevertab 配置
 inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
                       \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('omni')<cr>
                       \<c-r>=CleverTab#Complete('keyword')<cr>
+                      \<c-r>=CleverTab#Complete('omni')<cr>
                       \<c-r>=CleverTab#Complete('stop')<cr>
 inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
@@ -262,6 +268,7 @@ let g:pymode_run_bind = '<leader>e'
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['^__pycache__$']
+let g:NERDTreeWinSize=25
 
 " startify
 autocmd VimEnter *
@@ -274,3 +281,9 @@ autocmd VimEnter *
 " leaderf
 " 最优选放在最下面
 let g:Lf_ReverseOrder = 1
+
+" tagbar
+noremap tb :TagbarToggle<cr>
+let g:tagbar_width = 30
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0

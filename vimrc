@@ -218,18 +218,18 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
-Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" clevertab（coc.vim可以直接通过配置项达到此效果）
 Plug 'neitanod/vim-clevertab'
 " 在 Vim 里运行终端的插件，待观察
 " Plug 'kassio/neoterm'
 Plug 'tpope/vim-fugitive'
-" 可以替代 tagbar 的插件，有图标无法显示，待观察
-" Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " 主题颜色
@@ -251,14 +251,14 @@ let g:indentLine_concealcursor = "nv"
 " easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
 
-" python-mode 配置
+" " python-mode 配置
 " Python 3
 let g:pymode_python = 'python3'
 " 不显示错误信息窗口
 let g:pymode_lint_cwindow = 0
 " 保存和保存退出时自动格式化代码
 if has("autocmd")
-  " local mapping just for the active buffer
+  " 给当前缓存绑定快捷键 local mapping just for the active buffer
   autocmd filetype python nnoremap <buffer> <leader>w :PymodeLintAuto<cr>:w<cr>:PymodeLint<cr>
   autocmd filetype python nnoremap <buffer> <leader>x :PymodeLintAuto<cr>:x<cr>
 endif
@@ -288,7 +288,7 @@ let g:Lf_ReverseOrder = 1
 
 " tagbar
 noremap tb :TagbarToggle<cr>
-let g:tagbar_width = 30
+let g:tagbar_width=25
 " 激活 tagbar 后自动跳转到 tagbar 窗口
 let g:tagbar_autofocus = 1
 " 禁止自动排序，用原顺序即可
@@ -314,3 +314,6 @@ let g:airline_powerline_fonts = 1
 " If you want to show the nearest function in your statusline automatically,
 " you can add the following line to your vimrc 
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+" coc.vim
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

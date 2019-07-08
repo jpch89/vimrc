@@ -222,10 +222,14 @@ Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'neitanod/vim-clevertab'
+" 在 Vim 里运行终端的插件，待观察
 " Plug 'kassio/neoterm'
 Plug 'tpope/vim-fugitive'
+" 可以替代 tagbar 的插件，有图标无法显示，待观察
 " Plug 'liuchengxu/vista.vim'
 Plug 'majutsushi/tagbar'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " 主题颜色
@@ -285,5 +289,25 @@ let g:Lf_ReverseOrder = 1
 " tagbar
 noremap tb :TagbarToggle<cr>
 let g:tagbar_width = 30
+" 激活 tagbar 后自动跳转到 tagbar 窗口
 let g:tagbar_autofocus = 1
+" 禁止自动排序，用原顺序即可
 let g:tagbar_sort = 0
+
+" 图标相关
+let g:airline_powerline_fonts = 1
+
+" vista.vim
+" noremap <leader>v :Vista!!<cr>
+" 显示最近的函数或类
+" function! NearestMethodOrFunction() abort
+  " return get(b:, 'vista_nearest_method_or_function', '')
+" endfunction
+
+" set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc 
+" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()

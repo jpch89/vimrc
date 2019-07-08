@@ -293,6 +293,9 @@ let g:tagbar_width = 30
 let g:tagbar_autofocus = 1
 " 禁止自动排序，用原顺序即可
 let g:tagbar_sort = 0
+let g:tagbar_iconchars = ['▸', '▾']
+" 修复热键冲突，d 显示原型，d for definition，默认为空格
+let g:tagbar_map_showproto = 'd'
 
 " 图标相关
 let g:airline_powerline_fonts = 1

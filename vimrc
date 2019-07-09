@@ -225,16 +225,16 @@ Plug 'jpch89/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Yggdroot/LeaderF'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " clevertab（coc.vim可以直接通过配置项达到此效果）
-Plug 'neitanod/vim-clevertab'
+" Plug 'neitanod/vim-clevertab'
 " 在 Vim 里运行终端的插件，待观察
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
-" 仅使用 coc-pairs, coc-json, coc-html, coc-css
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" 仅使用 coc-json, coc-html, coc-css
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
@@ -243,12 +243,12 @@ colorscheme onehalflight
 let g:airline_theme='onehalfdark'
 
 " clevertab 配置
-inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
-                      \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('keyword')<cr>
-                      \<c-r>=CleverTab#Complete('omni')<cr>
-                      \<c-r>=CleverTab#Complete('stop')<cr>
-inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
+" inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
+"                       \<c-r>=CleverTab#Complete('tab')<cr>
+"                       \<c-r>=CleverTab#Complete('keyword')<cr>
+"                       \<c-r>=CleverTab#Complete('omni')<cr>
+"                       \<c-r>=CleverTab#Complete('stop')<cr>
+" inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 " indentline 相关配置
 let g:indentLine_setConceal = 2
@@ -328,7 +328,7 @@ let g:airline_powerline_fonts = 1
 
 " coc.vim
 " 使用 tab 切换补全选项
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " coc-autopairs
 " 禁止在 vim 文件中的双引号配对行为，这会影响到注释
@@ -336,5 +336,5 @@ let g:airline_powerline_fonts = 1
 
 " jedi-vim
 " 把 shift + k 绑定到无用键位
-let g:jedi#documentation_command = ""
-let g:jedi#usages_command = "<leader>u"
+" let g:jedi#documentation_command = ""
+" let g:jedi#usages_command = "<leader>u"

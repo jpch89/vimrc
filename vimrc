@@ -117,6 +117,8 @@ set softtabstop=4
 
 " 自动切换目录
 " set autochdir
+" 不自动切换目录
+" set noautochdir
 
 " 显示行号
 set number
@@ -231,7 +233,9 @@ Plug 'majutsushi/tagbar'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 " 仅使用 coc-pairs, coc-json, coc-html, coc-css
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " 主题颜色
@@ -253,7 +257,7 @@ let g:indentLine_concealcursor = "nv"
 " easymotion 相关配置：m for motion
 nmap <leader>m <Plug>(easymotion-s2)
 
-" " python-mode 配置
+" python-mode 配置
 " Python 3
 let g:pymode_python = 'python3'
 " 不显示错误信息窗口
@@ -270,8 +274,9 @@ endif
 let g:pymode_preview_height = 8
 " 运行代码快捷键
 let g:pymode_run_bind = '<leader>e'
-" 自动检测文件类型
-" au BufNewFile,BufRead *.py set filetype=python
+" 关闭 rope
+let g:pymode_rope = 0
+" let g:pymode_rope_goto_definition_bind = '<leader>rg'
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>
@@ -289,6 +294,8 @@ autocmd VimEnter *
 " leaderf
 " 最优选放在最下面
 let g:Lf_ReverseOrder = 1
+" 自动查找项目根目录
+let g:Lf_WorkingDirectoryMode = 'Ac'
 
 " tagbar
 noremap tb :TagbarToggle<cr>
@@ -316,13 +323,18 @@ let g:airline_powerline_fonts = 1
 " By default vista.vim never run if you don't call it explicitly.
 "
 " If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc 
+" you can add the following line to your vimrc
 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 " coc.vim
 " 使用 tab 切换补全选项
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " coc-autopairs
-" 禁止在 vim 文件中的双引号配对行为
-autocmd FileType vim let b:coc_pairs_disabled = ['"']
+" 禁止在 vim 文件中的双引号配对行为，这会影响到注释
+" autocmd FileType vim let b:coc_pairs_disabled = ['"']
+
+" jedi-vim
+" 把 shift + k 绑定到无用键位
+let g:jedi#documentation_command = ""
+let g:jedi#usages_command = "<leader>u"

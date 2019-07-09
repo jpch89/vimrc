@@ -243,6 +243,9 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neocomplete.vim'
 Plug 'mattn/emmet-vim'
+" 配合 coc-snippets
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 call plug#end()
 
 " 主题颜色
@@ -335,7 +338,21 @@ let g:airline_powerline_fonts = 1
 
 " coc.vim
 " 使用 tab 切换补全选项
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" 使用 ctrl-l  选择 snippets
+" inoremap <silent><expr> <c-l>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " coc-autopairs
 " 禁止在 vim 文件中的双引号配对行为，这会影响到注释
@@ -349,4 +366,9 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+" ctrl-e 前导加逗号可补全
 let g:user_emmet_leader_key='<c-e>'
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+

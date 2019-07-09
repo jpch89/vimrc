@@ -170,6 +170,9 @@ set completeopt=longest,menuone
 " 保证上下空行
 set scrolloff=3
 
+" 命令窗口显示两行
+" set cmdheight=2
+
 " 开启分屏
 nnoremap <leader>sk :set nosplitbelow<cr>:split<cr>
 nnoremap <leader>sj :set splitbelow<cr>:split<cr>
@@ -236,6 +239,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'jiangmiao/auto-pairs'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neocomplete.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " 主题颜色
@@ -244,10 +251,10 @@ let g:airline_theme='onehalfdark'
 
 " clevertab 配置
 " inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
-"                       \<c-r>=CleverTab#Complete('tab')<cr>
-"                       \<c-r>=CleverTab#Complete('keyword')<cr>
-"                       \<c-r>=CleverTab#Complete('omni')<cr>
-"                       \<c-r>=CleverTab#Complete('stop')<cr>
+                      " \<c-r>=CleverTab#Complete('tab')<cr>
+                      " \<c-r>=CleverTab#Complete('keyword')<cr>
+                      " \<c-r>=CleverTab#Complete('omni')<cr>
+                      " \<c-r>=CleverTab#Complete('stop')<cr>
 " inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 " indentline 相关配置
@@ -276,7 +283,7 @@ let g:pymode_preview_height = 8
 let g:pymode_run_bind = '<leader>e'
 " 关闭 rope
 let g:pymode_rope = 0
-" let g:pymode_rope_goto_definition_bind = '<leader>rg'
+let g:pymode_rope_goto_definition_bind = '<leader>rg'
 
 " nerdtree
 map <leader>n :NERDTreeToggle<CR>
@@ -338,3 +345,8 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " 把 shift + k 绑定到无用键位
 " let g:jedi#documentation_command = ""
 " let g:jedi#usages_command = "<leader>u"
+
+" emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<c-e>'

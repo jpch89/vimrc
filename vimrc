@@ -173,6 +173,10 @@ set scrolloff=3
 " 命令窗口显示两行
 " set cmdheight=2
 
+" 普通模式添加空行，不进入插入模式
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
 " 开启分屏
 nnoremap <leader>sk :set nosplitbelow<cr>:split<cr>
 nnoremap <leader>sj :set splitbelow<cr>:split<cr>
@@ -246,6 +250,7 @@ Plug 'mattn/emmet-vim'
 " 配合 coc-snippets
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+Plug 'tweekmonster/django-plus.vim'
 call plug#end()
 
 " 主题颜色
@@ -351,8 +356,8 @@ let g:airline_powerline_fonts = 1
 "   return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+" Use <C-l> for both expand and jump (make expand higher priority.)
+imap <C-l> <Plug>(coc-snippets-expand-jump)
 
 " coc-autopairs
 " 禁止在 vim 文件中的双引号配对行为，这会影响到注释
@@ -365,9 +370,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-" ctrl-e 前导加逗号可补全
-let g:user_emmet_leader_key='<c-e>'
+autocmd FileType html,css,htmldjango EmmetInstall
+" ctrl-k 前导加逗号可补全
+let g:user_emmet_leader_key='<c-k>'
 
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
